@@ -85,13 +85,6 @@ hr{
     grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
     gap: 20px;
 }
-
-.card{
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px;
-}
-
 .card img{
     width: 100%;
     height: 200px;
@@ -100,34 +93,53 @@ hr{
     border-radius: 15px;
     transition: .3s;
 }
-
-.card button{
-    position: absolute;
-    top: 100px; /* منتصف الصورة لأن ارتفاعها 200px */
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-
-    background: #0077ff;
-    color: white;
-    cursor: pointer;
-
-    opacity: 0;
-    transition: .3s;
-}
-
 .card:hover img{
     transform: scale(1.08);
     filter: brightness(.6);
 }
-
-.card:hover button{
-    opacity: 1;
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.card button{
+    width: 90%;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #1e40ff;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: .3s;
+    width: 100%;
+    padding: 12px;
+    border-radius: 0 0 12px 12px;
+}
+.download-btn{
+    margin-top: auto;
 }
 
+.card button:hover{
+    background: #1635d8;
+}
+
+.card img{
+    cursor: zoom-in;
+}
+
+.image-title{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+    min-height: 48px; /* أو 50px */
+    text-align: center;
+}
 /* =========================
    About
 ========================= */
@@ -184,16 +196,7 @@ hr{
     user-select: none;
 }
 
-.card img{
-    cursor: zoom-in;
-}
 
-.image-title{
-    color: rgb(0, 0, 0);
-    text-align: center;
-    margin-top: 10px;
-    font-size: 18px;
-}
 
 .search-box{
     width: 50%;

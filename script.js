@@ -23,7 +23,6 @@ viewer.addEventListener("click", function (e) {
     }
 });
 
-
 // ======================
 // Search + Filter
 // ======================
@@ -35,9 +34,10 @@ const noResults = document.getElementById("noResults");
 
 let currentFilter = "all";
 
+
 function updateGallery() {
 
-    const value = search ? search.value.toLowerCase() : "";
+    const value = search ? search.value.trim().toLowerCase() : "";
 
     let visibleCards = 0;
 
@@ -45,9 +45,22 @@ function updateGallery() {
 
         const title = card.querySelector(".image-title").textContent.toLowerCase();
 
-        const matchSearch = title.includes(value);
+        const img = card.querySelector("img");
+
+        const fileName = img.getAttribute("src")
+            .split("/")
+            .pop()
+            .replace(/\.[^/.]+$/, "")
+            .replace(/[-_]/g, " ")
+            .toLowerCase();
+
+        const searchText = title + " " + fileName;
+
+        const matchSearch = searchText.includes(value);
+
         const matchFilter =
-            currentFilter === "all" || card.classList.contains(currentFilter);
+            currentFilter === "all" ||
+            card.classList.contains(currentFilter);
 
         if (matchSearch && matchFilter) {
             card.style.display = "block";
@@ -59,26 +72,18 @@ function updateGallery() {
     });
 
     if (noResults) {
-        if (visibleCards === 0) {
-            noResults.style.display = "block";
-        } else {
-            noResults.style.display = "none";
-        }
+        noResults.style.display = visibleCards === 0 ? "block" : "none";
     }
 
 }
-
 
 // ======================
 // Search
 // ======================
 
 if (search) {
-
-    search.addEventListener("keyup", updateGallery);
-
+    search.addEventListener("input", updateGallery);
 }
-
 
 // ======================
 // Filter
@@ -102,7 +107,6 @@ filterButtons.forEach(button => {
 
 });
 
-
 // ======================
 // First Load
 // ======================
@@ -116,8 +120,7 @@ updateGallery();
 const themeToggle = document.getElementById("theme-toggle");
 const icon = themeToggle.querySelector("i");
 
-// تحميل الوضع المحفوظ
-if(localStorage.getItem("theme") === "dark"){
+if (localStorage.getItem("theme") === "dark") {
 
     document.body.classList.add("dark");
 
@@ -126,22 +129,22 @@ if(localStorage.getItem("theme") === "dark"){
 
 }
 
-themeToggle.addEventListener("click", function(e){
+themeToggle.addEventListener("click", function (e) {
 
     e.preventDefault();
 
     document.body.classList.toggle("dark");
 
-    if(document.body.classList.contains("dark")){
+    if (document.body.classList.contains("dark")) {
 
-        localStorage.setItem("theme","dark");
+        localStorage.setItem("theme", "dark");
 
         icon.classList.remove("fa-moon");
         icon.classList.add("fa-sun");
 
-    }else{
+    } else {
 
-        localStorage.setItem("theme","light");
+        localStorage.setItem("theme", "light");
 
         icon.classList.remove("fa-sun");
         icon.classList.add("fa-moon");
@@ -150,16 +153,7 @@ themeToggle.addEventListener("click", function(e){
 
 });
 
+// ======================
+// Shuffle
+// ======================
 
-window.addEventListener("load", function () {
-
-    const gallery = document.querySelector(".gallery");
-    const cards = Array.from(gallery.children);
-
-    // خلط عشوائي (Shuffle)
-    cards.sort(() => Math.random() - 0.5);
-
-    // إعادة ترتيبهم في الصفحة
-    cards.forEach(card => gallery.appendChild(card));
-
-});
