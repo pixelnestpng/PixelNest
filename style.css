@@ -351,6 +351,201 @@ body.dark .image-title{
     color: white;
 }
 
+.upload-section{
+
+    width:100%;
+    max-width:900px;
+    margin:60px auto;
+    text-align:center;
+
+}
+
+.upload-section h1{
+
+    font-size:42px;
+    margin-bottom:10px;
+
+}
+
+.subtitle{
+
+    color:#868383;
+    margin-bottom:40px;
+
+}
+
+.upload-box{
+
+    border:2px dashed #4f8cff;
+    border-radius:20px;
+
+    padding:60px 20px;
+
+    transition:.3s;
+
+}
+
+.upload-box:hover{
+
+    background:#f8fbff;
+
+}
+
+.upload-box i{
+
+    font-size:70px;
+    color:#4f8cff;
+
+}
+
+.upload-box h2{
+
+    margin:20px 0 10px;
+    color: #000;
+
+}
+
+.upload-box p{
+
+    color:#000000;
+    margin-bottom:30px;
+
+}
+
+#uploadBtn{
+
+    border:none;
+    padding:15px 35px;
+    border-radius:10px;
+
+    background:#0c4dc5;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+#preview{
+
+    max-width:700px;
+    max-height:500px;
+
+    margin-top:40px;
+
+    border-radius:15px;
+
+    display:none;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+}
+#editor{
+
+    display:none;
+
+    text-align:center;
+
+    margin-top:40px;
+
+}
+
+#canvas{
+
+    width:100%;
+
+    max-width:900px;
+
+    border-radius:20px;
+
+    background:#ffffff;
+
+    margin:30px auto;
+
+}
+
+.ratio-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    
+
+}
+
+.ratio-buttons button{
+
+    padding:12px 25px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:16px;
+    color: #046070;
+
+}
+
+#downloadBtn{
+
+    margin-top:25px;
+
+    padding:15px 40px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:18px;
+    background-color: #002aff;
+    color: #f5f5f5;
+
+}
+#image-editor {
+    background-color: #0c295e;
+    color: #ffffff;
+}
+.logo-editor{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5px;
+    width: 100%;   /* صغر الحجم كما تريد */
+    height: auto;
+
+
+}
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 1300px;
+    width: 45px;
+    height: 45px;
+    background: #079cff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,.15);
+    transition: .3s;
+}
+
+.back-btn:hover {
+    transform: scale(1.1);
+}
+
 
 
 
@@ -406,6 +601,153 @@ body.dark .image-title{
 
 .about-btn:hover{
     background: #1D4ED8;
+}
+/* ===========================
+   Responsive - Mobile
+=========================== */
+
+@media (max-width:768px){
+
+    .upload-section{
+
+        width:95%;
+        margin:30px auto;
+
+    }
+
+    .upload-section h1{
+
+        font-size:30px;
+
+    }
+
+    .subtitle{
+
+        font-size:15px;
+
+    }
+
+    .upload-box{
+
+        padding:40px 15px;
+
+    }
+
+    .upload-box i{
+
+        font-size:55px;
+
+    }
+
+    .upload-box h2{
+
+        font-size:20px;
+
+    }
+
+    .upload-box p{
+
+        font-size:14px;
+
+    }
+
+    #uploadBtn{
+
+        width:100%;
+        font-size:17px;
+
+    }
+
+    .ratio-buttons{
+
+        gap:10px;
+
+    }
+
+    .ratio-buttons button{
+
+        width:45%;
+        padding:12px;
+
+        font-size:15px;
+
+    }
+
+    #canvas{
+
+        width:100%;
+        height:auto;
+
+    }
+
+    #downloadBtn{
+
+        width:100%;
+        font-size:17px;
+
+    }
+
+    .logo-editor{
+
+        padding:10px;
+
+    }
+
+    .logo-editor img{
+
+        width:150px;
+
+    }
+
+    .back-btn{
+
+        left:20px;
+        top:20px;
+
+        width:40px;
+        height:40px;
+
+    }
+
+}
+
+
+/* ===========================
+   Responsive - Small Phones
+=========================== */
+
+@media (max-width:480px){
+
+    .upload-section h1{
+
+        font-size:24px;
+
+    }
+
+    .subtitle{
+
+        font-size:14px;
+
+    }
+
+    .upload-box{
+
+        padding:30px 10px;
+
+    }
+
+    .upload-box h2{
+
+        font-size:18px;
+
+    }
+
+    .ratio-buttons button{
+
+        width:100%;
+
+    }
+
 }
 @media (max-width:768px){
 

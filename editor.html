@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body id="image-editor">
+    <header>
+        <a href="index.html" class="logo-editor">
+         <img src="logo/logo.png" alt="logo">
+        </a>
+        <a href="javascript:history.back()" class="back-btn">
+         <i class="fa-solid fa-arrow-left"></i>
+        </a>
+    </header>
+    
+    <section class="upload-section">
+
+    <h1>Image Editor</h1>
+
+    <p class="subtitle">
+        Upload your image to get started
+    </p>
+
+    <div class="upload-box">
+
+        <i class="fa-solid fa-cloud-arrow-up"></i>
+
+        <h2>Drag & Drop your image here</h2>
+
+        <p>PNG • JPG • WEBP</p>
+
+        <input type="file" id="imageInput" hidden accept="image/*">
+
+        <button id="uploadBtn">
+            Choose Image
+        </button>
+        <img id="preview" style="display:none;">
+
+    </div>
+    <div id="editor" style="display:none;">
+
+        <div class="ratio-buttons">
+
+         <button data-ratio="16:9">16 : 9</button>
+
+         <button data-ratio="9:16">9 : 16</button>
+
+         <button data-ratio="1:1">1 : 1</button>
+
+         <button data-ratio="4:5">4 : 5</button>
+
+        </div>
+
+       <canvas id="canvas"></canvas>
+
+        <button id="downloadBtn">
+         Download Image
+        </button>
+
+    </div>
+
+</section>
+<script src="editor.js"></script>
+</body>
+</html>
