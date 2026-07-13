@@ -1,0 +1,332 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Inter",sans-serif;
+}
+
+body{
+    background:#bcd0ff;
+    color:#fff;
+    overflow:hidden;
+}
+
+.app{
+    display:flex;
+    height:100vh;
+}
+
+.main{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    background:#0f172a;
+}
+
+.topbar{
+    height:70px;
+    border-bottom:1px solid #1f2937;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.logo-title{
+    display:flex;
+    align-items:center;
+}
+
+.logo-title img{
+    width:80px;
+    height:80px;
+    object-fit:contain;
+}
+
+.logo-title h1{
+    font-size:25px;
+    margin: 0;
+}
+
+.chat-area{
+    flex:1;
+    overflow-y:auto;
+    padding:40px;
+    display:flex;
+    flex-direction:column;
+}
+
+.message-ai{
+    display:flex;
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.message-user{
+    display:flex;
+    justify-content:flex-end;
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.message-user .avatar{
+    order:2;
+    background:#16a34a;
+}
+
+.message-user .text{
+    background:#2563eb;
+}
+
+.avatar{
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    background:#2563eb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:18px;
+    flex-shrink:0;
+}
+
+.text{
+    background:#132255;
+    padding:18px;
+    border-radius:15px;
+    max-width:700px;
+}
+
+.text h3{
+    margin-bottom:10px;
+}
+
+.text p{
+    line-height:1.7;
+}
+
+b{
+    color:#7ec8ff;
+}
+
+/* ========================= */
+/* Input Area */
+/* ========================= */
+
+.input-area{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:20px;
+    border-top:1px solid #1f2937;
+}
+
+/* سلة المهملات */
+
+.Clear-Chat{
+
+    width:55px;
+    height:55px;
+
+    border:none;
+    border-radius:14px;
+
+    background:#dc2626;
+
+    color:#fff;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    flex-shrink:0;
+
+    transition:.3s;
+
+}
+
+.Clear-Chat:hover{
+    background:#b91c1c;
+}
+
+/* مربع الكتابة */
+
+.input-area textarea{
+
+    flex:1;
+
+    height:55px;
+
+    resize:none;
+
+    border:none;
+    outline:none;
+
+    background:#1e293b;
+
+    color:white;
+
+    border-radius:14px;
+
+    padding:16px;
+
+    font-size:16px;
+
+}
+
+/* زر الإرسال */
+
+.send-btn{
+
+    width:110px;
+    height:55px;
+
+    border:none;
+    border-radius:14px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.send-btn:hover{
+    background:#1d4ed8;
+}
+.logo-PixelNest-Ai{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5px;
+    width: 100%;   /* صغر الحجم كما تريد */
+    height: auto;
+
+
+}
+.back-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+
+    width: 45px;
+    height: 45px;
+
+    background: #079cff;
+    color: #000;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,.15);
+
+    transition: .3s;
+
+    z-index: 1000;
+}
+
+.back-btn:hover {
+    transform: scale(1.1);
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media (max-width:768px){
+
+    body{
+        overflow:auto;
+    }
+
+    .app{
+        flex-direction:column;
+        height:100vh;
+    }
+
+    .sidebar{
+        width:100%;
+        border-right:none;
+        border-bottom:1px solid #1f2937;
+        padding:15px;
+    }
+
+    .new-chat{
+        width:100%;
+    }
+
+    .topbar{
+        height:60px;
+    }
+
+    .topbar h1{
+        font-size:22px;
+    }
+
+    .chat-area{
+        padding:15px;
+    }
+
+    .text{
+        max-width:85%;
+        padding:15px;
+    }
+
+    .input-area{
+        padding:15px;
+        gap:10px;
+    }
+
+    .input-area textarea{
+        font-size:15px;
+        height:55px;
+    }
+
+    .input-area button{
+        width:90px;
+    }
+
+}
+@media (max-width:480px){
+
+    .input-area{
+        flex-direction:row;
+        align-items:center;
+        gap:8px;
+    }
+
+    .input-area textarea{
+        flex:1;
+        width:auto;
+        height:45px;
+        font-size:14px;
+    }
+
+    .send-btn{
+        width:70px;
+        height:45px;
+        font-size:14px;
+        flex-shrink:0;
+    }
+
+    .Clear-Chat{
+        width:45px;
+        height:45px;
+        font-size:18px;
+        flex-shrink:0;
+    }
+
+}
